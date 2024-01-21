@@ -1,0 +1,509 @@
+<!-- result.html -->
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        input {
+            width: 15%;
+            border: 1px solid #3498db;
+            margin: 1px;
+            padding: 8px;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input:hover {
+            background: #2980b9;
+        }
+
+        button {
+            width: 15%;
+            border: 1px solid #2ecc71;
+            margin: 1px;
+            padding: 8px;
+            background-color: #2ecc71;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background: #27ae60;
+        }
+
+        table {
+            font-family: 'Arial', sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            background-color: white;
+            border: 2px solid #3498db;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            /* padding: 2px; */
+        }
+        th#signt{
+            vertical-align: bottom;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .error-message {
+            color: red;
+        }
+
+        .action-buttons {
+            margin-top: 2px;
+        }
+
+        @media print {
+            .action-buttons {
+                display: none;
+                /* Hide the buttons when printing*/
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    
+    <center>
+        <h3>आयकर निर्धारणासाठी वेतन व भत्ते आणि इतर उत्पन्नाचे विवरण पत्र वर्ष 2023-2024</h3>
+        <? if (userFound) { ?>
+
+        <table>
+            <tr>
+                <th scope="col">नाव </th>
+                <td><?= employee ?></td>
+                <th>पदनाम-</th>
+                <td colspan="2"><?= designation?></td>
+                <th>शाळेचे नाव </th>
+                <td colspan="2"><?=school ?></td>
+                <th>तालुका</th>
+                <td colspan="2"><?= taluka ?></td>
+            </tr>
+            <tr>
+                <th>शालार्थ ID</th>
+                <td><?= shalid ?></td>
+                <th>PAN-</th>
+                <td><?= panno ?></td>
+                <th>बँक खा.क्र.</th>
+                <td><?= accountno ?></td>
+                <th>बँकचे नाव-</th>
+                <td colspan="3"><?= bankname ?></td>
+            </tr>
+        </table>
+        <table >
+            <thead>
+                <tr>
+                    <th scope="col">महिना</th>
+                    <th scope="col">मुळ वेतन </th>
+                    <th scope="col">महागाई भत्ता</th>
+                    <th scope="col">घरभाडे</th>
+                    <th scope="col">वाहन भत्ता</th>
+                    <th scope="col">थकित देयक म.भ-जुलै22 ते जाने-23- 4% + जुलै23 ते नोव्हें23-4%</th>
+                    <th scope="col">7वा आयोग हप्ते</th>
+                    <th scope="col">NPS Govt.contri 14%</th>
+                    <th scope="col">एकूण</th>
+                    <th scope="col">व्यवसाय कर</th>
+                    <th scope="col">भ.नि.नि.</th>
+                    <th scope="col">गटविमा</th>
+                    <th scope="col"> NPS असल्यास Employer contri 10% +14%</th>
+                    <th scope="col">सामु अप विमा योजना </th>
+                    <th scope="col">आयुर्विमा</th>
+                    <th scope="col">आयकर कपात</th>
+                  </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">मार्च 2023</th>
+                    <td><?= basicPay ?></td>
+                    <td><?= da ?></td>
+                    <td><?= hra ?></td>
+                    <td><?= ta ?></td>
+                    <td><?= daArrears ?></td>
+                    <td><?= basicArrears ?></td>
+                    <td><?= npsEmpRAllow ?></td>
+                    <td><?= grossAfterDeductingFA ?></td>
+                    <td><?= pt ?></td>
+                    <td><?= gpf ?></td>
+                    <td><?= gisZp ?></td>
+                    <td><?= npsTotal ?></td>
+                    <td><?= groupAccidentalPolicy ?></td>
+                    <td><?= ngrLic ?></td>
+                    <td><?= incomeTax ?></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">‍एप्रिल 2023</th>
+                    <td><?= basicPay3 ?></td>
+                    <td><?= da4 ?></td>
+                    <td><?= hra5 ?></td>
+                    <td><?= ta6 ?></td>
+                    <td><?= daArrears7 ?></td>
+                    <td><?= basicArrears8 ?></td>
+                    <td><?= npsEmpRAllow9 ?></td>
+                    <td><?= grossAfterDeductingFA10 ?></td>
+                    <td><?= pt11 ?></td>
+                    <td><?= gpf12 ?></td>
+                    <td><?= gisZp13 ?></td>
+                    <td><?= npsTotal14 ?></td>
+                    <td><?= groupAccidentalPolicy15 ?></td>
+                    <td><?= ngrLic16 ?></td>
+                    <td><?= incomeTax17 ?></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">मे 2023</th>
+                    <td><?= basicPay18 ?></td>
+                    <td><?= da19 ?></td>
+                    <td><?= hra20 ?></td>
+                    <td><?= ta21 ?></td>
+                    <td><?= daArrears22 ?></td>
+                    <td><?= basicArrears23 ?></td>
+                    <td><?= npsEmpRAllow24 ?></td>
+                    <td><?= grossAfterDeductingFA25 ?></td>
+                    <td><?= pt26 ?></td>
+                    <td><?= gpf27 ?></td>
+                    <td><?= gisZp28 ?></td>
+                    <td><?= npsTotal29 ?></td>
+                    <td><?= groupAccidentalPolicy30 ?></td>
+                    <td><?= ngrLic31 ?></td>
+                    <td><?= incomeTax32 ?></td>
+                </tr>
+
+
+                <tr>
+                    <th scope="row">जून 2023</th>
+                    <td><?= basicPay33 ?></td>
+                    <td><?= da34 ?></td>
+                    <td><?= hra35 ?></td>
+                    <td><?= ta36 ?></td>
+                    <td><?= daArrears37 ?></td>
+                    <td><?= basicArrears38 ?></td>
+                    <td><?= npsEmpRAllow39 ?></td>
+                    <td><?= grossAfterDeductingFA40 ?></td>
+                    <td><?= pt41 ?></td>
+                    <td><?= gpf42 ?></td>
+                    <td><?= gisZp43 ?></td>
+                    <td><?= npsTotal44 ?></td>
+                    <td><?= groupAccidentalPolicy45 ?></td>
+                    <td><?= ngrLic46 ?></td>
+                    <td><?= incomeTax47 ?></td>
+                </tr>
+
+
+                <tr>
+                    <th scope="row">जूलै 2023</th>
+                    <td><?= basicPay48 ?></td>
+                    <td><?= da49 ?></td>
+                    <td><?= hra50 ?></td>
+                    <td><?= ta51 ?></td>
+                    <td><?= daArrears52 ?></td>
+                    <td><?= basicArrears53 ?></td>
+                    <td><?= npsEmpRAllow54 ?></td>
+                    <td><?= grossAfterDeductingFA55 ?></td>
+                    <td><?= pt56 ?></td>
+                    <td><?= gpf57 ?></td>
+                    <td><?= gisZp58 ?></td>
+                    <td><?= npsTotal59 ?></td>
+                    <td><?= groupAccidentalPolicy60 ?></td>
+                    <td><?= ngrLic61 ?></td>
+                    <td><?= incomeTax62 ?></td>
+                </tr>
+
+
+                <tr>
+                    <th scope="row">ऑगस्ट 2023</th>
+                    <td><?= basicPay63 ?></td>
+                    <td><?= da64 ?></td>
+                    <td><?= hra65 ?></td>
+                    <td><?= ta66 ?></td>
+                    <td><?= daArrears67 ?></td>
+                    <td><?= basicArrears68 ?></td>
+                    <td><?= npsEmpRAllow69 ?></td>
+                    <td><?= grossAfterDeductingFA70 ?></td>
+                    <td><?= pt71 ?></td>
+                    <td><?= gpf72 ?></td>
+                    <td><?= gisZp73 ?></td>
+                    <td><?= npsTotal74 ?></td>
+                    <td><?= groupAccidentalPolicy75 ?></td>
+                    <td><?= ngrLic76 ?></td>
+                    <td><?= incomeTax77 ?></td>
+                </tr>
+
+
+                <tr>
+                    <th scope="row">सप्टें 2023</th>
+                    <td><?= basicPay78 ?></td>
+                    <td><?= da79 ?></td>
+                    <td><?= hra80 ?></td>
+                    <td><?= ta81 ?></td>
+                    <td><?= daArrears82 ?></td>
+                    <td><?= basicArrears83 ?></td>
+                    <td><?= npsEmpRAllow84 ?></td>
+                    <td><?= grossAfterDeductingFA85 ?></td>
+                    <td><?= pt86 ?></td>
+                    <td><?= gpf87 ?></td>
+                    <td><?= gisZp88 ?></td>
+                    <td><?= npsTotal89 ?></td>
+                    <td><?= groupAccidentalPolicy90 ?></td>
+                    <td><?= ngrLic91 ?></td>
+                    <td><?= incomeTax92 ?></td>
+                </tr>
+
+
+                <tr>
+                    <th scope="row">ऑक्टो 2023</th>
+                    <td><?= basicPay93 ?></td>
+                    <td><?= da94 ?></td>
+                    <td><?= hra95 ?></td>
+                    <td><?= ta96 ?></td>
+                    <td><?= daArrears97 ?></td>
+                    <td><?= basicArrears98 ?></td>
+                    <td><?= npsEmpRAllow99 ?></td>
+                    <td><?= grossAfterDeductingFA100 ?></td>
+                    <td><?= pt101 ?></td>
+                    <td><?= gpf102 ?></td>
+                    <td><?= gisZp103 ?></td>
+                    <td><?= npsTotal104 ?></td>
+                    <td><?= groupAccidentalPolicy105 ?></td>
+                    <td><?= ngrLic106 ?></td>
+                    <td><?= incomeTax107 ?></td>
+                </tr>
+
+
+                <tr>
+                    <th scope="row">नोव्हें 2023</th>
+                    <td><?= basicPay108 ?></td>
+                    <td><?= da109 ?></td>
+                    <td><?= hra110 ?></td>
+                    <td><?= ta111 ?></td>
+                    <td><?= daArrears112 ?></td>
+                    <td><?= basicArrears113 ?></td>
+                    <td><?= npsEmpRAllow114 ?></td>
+                    <td><?= grossAfterDeductingFA115 ?></td>
+                    <td><?= pt116 ?></td>
+                    <td><?= gpf117 ?></td>
+                    <td><?= gisZp118 ?></td>
+                    <td><?= npsTotal119 ?></td>
+                    <td><?= groupAccidentalPolicy120 ?></td>
+                    <td><?= ngrLic121 ?></td>
+                    <td><?= incomeTax122 ?></td>
+                </tr>
+
+
+                <tr>
+                    <th scope="row">डिसें 2023</th>
+                    <td><?= basicPay123 ?></td>
+                    <td><?= da124 ?></td>
+                    <td><?= hra125 ?></td>
+                    <td><?= ta126 ?></td>
+                    <td><?= daArrears127 ?></td>
+                    <td><?= basicArrears128 ?></td>
+                    <td><?= npsEmpRAllow129 ?></td>
+                    <td><?= grossAfterDeductingFA130 ?></td>
+                    <td><?= pt131 ?></td>
+                    <td><?= gpf132 ?></td>
+                    <td><?= gisZp133 ?></td>
+                    <td><?= npsTotal134 ?></td>
+                    <td><?= groupAccidentalPolicy135 ?></td>
+                    <td><?= ngrLic136 ?></td>
+                    <td><?= incomeTax137 ?></td>
+                </tr>
+
+
+                <tr>
+                    <th scope="row">जाने 2024</th>
+                    <td><?= basicPay138 ?></td>
+                    <td><?= da139 ?></td>
+                    <td><?= hra140 ?></td>
+                    <td><?= ta141 ?></td>
+                    <td><?= daArrears142 ?></td>
+                    <td><?= basicArrears143 ?></td>
+                    <td><?= npsEmpRAllow144 ?></td>
+                    <td><?= grossAfterDeductingFA145 ?></td>
+                    <td><?= pt146 ?></td>
+                    <td><?= gpf147 ?></td>
+                    <td><?= gisZp148 ?></td>
+                    <td><?= npsTotal149 ?></td>
+                    <td><?= groupAccidentalPolicy150 ?></td>
+                    <td><?= ngrLic151 ?></td>
+                    <td><?= incomeTax152 ?></td>
+                </tr>
+
+
+                <tr>
+                    <th scope="row">फेब्रू 2024</th>
+                    <td><?= basicPay153 ?></td>
+                    <td><?= da154 ?></td>
+                    <td><?= hra155 ?></td>
+                    <td><?= ta156 ?></td>
+                    <td><?= daArrears157 ?></td>
+                    <td><?= basicArrears158 ?></td>
+                    <td><?= npsEmpRAllow159 ?></td>
+                    <td><?= grossAfterDeductingFA160 ?></td>
+                    <td><?= pt161 ?></td>
+                    <td><?= gpf162 ?></td>
+                    <td><?= gisZp163 ?></td>
+                    <td><?= npsTotal164 ?></td>
+                    <td><?= groupAccidentalPolicy165 ?></td>
+                    <td><?= ngrLic166 ?></td>
+                    <td><?= incomeTax167 ?></td>
+                </tr>
+                <tr>
+                    <th scope="col"> इतर उत्पन्न</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="col"> इतर थकीत देयक</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="col">मेडीकल बिल </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+
+                <tr>
+                    <th scope="row">एकूण</th>
+                    <td><?= basicPay168 ?></td>
+                    <td><?= da169 ?></td>
+                    <td><?= hra170 ?></td>
+                    <td><?= ta171 ?></td>
+                    <td><?= daArrears172 ?></td>
+                    <td><?= basicArrears173 ?></td>
+                    <td><?= npsEmpRAllow174 ?></td>
+                    <td><?= grossAfterDeductingFA175 ?></td>
+                    <td><?= pt176 ?></td>
+                    <td><?= gpf177 ?></td>
+                    <td><?= gisZp178 ?></td>
+                    <td><?= npsTotal179 ?></td>
+                    <td><?= groupAccidentalPolicy180 ?></td>
+                    <td><?= ngrLic181 ?></td>
+                    <td><?= incomeTax182 ?></td>
+                </tr>
+                <br>
+                <tr>
+                    <th colspan="2" >UDISE NO:-</th>
+                    <td colspan="3"><?= udisecode ?></td>
+                    <th colspan="2">आधार-</th>
+                    <td colspan="3"><?= aadharno ?></td>
+                    <th colspan="2">मोबा.क्र - </th>
+                    <td colspan="4"><?= mobileno ?></td>
+                </tr>
+                <tr>
+                    <th >दिनांक-</th>
+                    <td colspan="4">___/____/2024</td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr><th colspan="5"></th>
+                    <th id="signt"  colspan="5" rowspan="3" >कर्मचारी स्वाक्षरी </th>
+                    <th id="orgsignt" colspan="6" rowspan="3">कार्यालय प्रमुखाची स्वाक्षरी </th>
+                </tr>
+
+            </tbody>
+            <? } else { ?>
+                <td colspan=2 align=center class="action-buttons">
+                    <p class="error-message">User not found</p>
+                </td>
+            </tr>
+            <? } ?>
+
+            </table>
+
+            <tr>
+                <td colspan=4 align=center class="action-buttons">
+                    <form method="get" action="<?= getUrl() ?>">
+                        <input type="submit" value="Home">
+                    </form>
+                    <? if (userFound) { ?>
+                    <button onclick="window.print()">Print</button>
+                    <? } ?>
+                </td>
+            </tr>
+
+        
+    </center>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

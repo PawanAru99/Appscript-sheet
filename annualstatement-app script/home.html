@@ -1,0 +1,49 @@
+<!-- Home.html -->
+
+<!DOCTYPE html>
+<center>
+  <html>
+
+  <head>
+    <base target="_top">
+    <style>
+      select,
+      input {
+        padding: 5px;
+        width: 100%;
+        border: 1px solid;
+        margin: 1px;
+        font-family: times
+      }
+
+      input:hover {
+        background: #FDF5E6;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Annual Statement</h1>
+    <table border="0" cellspacing="0">
+      <tr>
+        <td width=30% align=center>
+          <? var url = getUrl(); ?>
+          <form method="post" action="<?= url ?>">
+            <input type="text" name="shalid" placeholder="शालार्थ ID" style="width: 40%; font-size: 16px; border: 1px solid black; display: inline-block margin: 6px 2px;">
+            </br></br>
+            
+            <input type="text" inputmode="numeric" name="aadharno" placeholder="आधार नंबर." style="width: 40%; font-size: 16px; border: 1px solid black; display: inline-block margin: 6px 2px;">
+            </br></br>
+
+            <input type="submit" value="Get Result" name="Submit" style="background-color: #008CBA; color: white; width: 200px; font-size: 20px; border: 1px dashed #2F4F4F; height: 40px;">
+          </form>
+        </td>
+      </tr>
+    </table>
+  </body>
+
+  <script>
+  </script>
+</center>
+
+</html>
