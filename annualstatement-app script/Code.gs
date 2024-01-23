@@ -11,7 +11,7 @@ function doGet(e) {
 function doPost(e) {
     Logger.log(JSON.stringify(e));
 
-    if (e.parameter.Submit == 'Get Result') {
+    if (e.parameter.Submit == 'Get Payslip') {
         var aadharnum = e.parameter.aadharno;
         var shalid = e.parameter.shalid;
         var sheet = SpreadsheetApp.openById('11AumIRMy7LRCXwDm3LmA9Pev-YKCdiHE0LlFMoq5YOk').getSheetByName("AllData");
@@ -122,6 +122,7 @@ function doPost(e) {
             userOutput.ngrLic46 = userData[headers.indexOf("NGR(LIC)46")];
             userOutput.incomeTax47 = userData[headers.indexOf("INCOMETAX47")];
 
+            // Repeat the pattern for the remaining sets of data
             //July
             userOutput.basicPay48 = userData[headers.indexOf("BASICPAY48")];
             userOutput.da49 = userData[headers.indexOf("D.A49")];
@@ -139,8 +140,8 @@ function doPost(e) {
             userOutput.ngrLic61 = userData[headers.indexOf("NGR(LIC)61")];
             userOutput.incomeTax62 = userData[headers.indexOf("INCOMETAX62")];
 
-           
-            //Aug
+            // Continue until the last set of data
+//Aug
             userOutput.basicPay63 = userData[headers.indexOf("BASICPAY63")];
             userOutput.da64 = userData[headers.indexOf("D.A64")];
             userOutput.hra65 = userData[headers.indexOf("HRA65")];
@@ -242,7 +243,8 @@ function doPost(e) {
             userOutput.ngrLic151 = userData[headers.indexOf("NGR(LIC)151")];
             userOutput.incomeTax152 = userData[headers.indexOf("INCOMETAX152")];
 
-            //Feb
+            // Continue until the last set of data
+//Feb
             userOutput.basicPay153 = userData[headers.indexOf("BASICPAY153")];
             userOutput.da154 = userData[headers.indexOf("D.A154")];
             userOutput.hra155 = userData[headers.indexOf("HRA155")];

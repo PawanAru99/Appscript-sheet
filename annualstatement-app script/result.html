@@ -18,8 +18,12 @@
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
-            margin: 0;
+            margin: 5px;
             padding: 0;
+        }
+
+        div {
+            overflow: hidden;
         }
 
         input {
@@ -56,14 +60,14 @@
             font-family: 'Arial', sans-serif;
             border-collapse: collapse;
             width: 100%;
-            background-color: white;
-            border: 2px solid #3498db;
+            /* background-color: white; */
+            /* border: 2px solid #3498db; */
         }
 
         th,
         td {
             border: 1px solid #dddddd;
-            text-align: center;
+            /*text-align: center; */
             /* padding: 2px; */
         }
         th#signt{
@@ -83,18 +87,26 @@
         }
 
         @media print {
-            .action-buttons {
-                display: none;
-                /* Hide the buttons when printing*/
-            }
+          body *{
+            visibility:hidden;
+          }
+          #action-buttons {
+                display: none !important;
+          }
+          #annualstatement, #annualstatement *{
+                visibility:visible;
+          }
+          @page {
+              size:landscape;
+          }
         }
     </style>
 </head>
 
 <body>
-
-    
-    <center>
+    <div id="annualstatement">
+    <br>
+    <!-- <center> -->
         <h3>आयकर निर्धारणासाठी वेतन व भत्ते आणि इतर उत्पन्नाचे विवरण पत्र वर्ष 2023-2024</h3>
         <? if (userFound) { ?>
 
@@ -128,17 +140,22 @@
                     <th scope="col">महागाई भत्ता</th>
                     <th scope="col">घरभाडे</th>
                     <th scope="col">वाहन भत्ता</th>
-                    <th scope="col">थकित देयक म.भ-जुलै22 ते जाने-23- 4% + जुलै23 ते नोव्हें23-4%</th>
+                    <th scope="col">थकित वेतन </th>
                     <th scope="col">7वा आयोग हप्ते</th>
-                    <th scope="col">NPS Govt.contri 14%</th>
+                    <th scope="col">NPS Go.con 14%</th>
                     <th scope="col">एकूण</th>
                     <th scope="col">व्यवसाय कर</th>
                     <th scope="col">भ.नि.नि.</th>
                     <th scope="col">गटविमा</th>
-                    <th scope="col"> NPS असल्यास Employer contri 10% +14%</th>
+                    <th scope="col"> NPS Empcont 10+14%</th>
                     <th scope="col">सामु अप विमा योजना </th>
                     <th scope="col">आयुर्विमा</th>
                     <th scope="col">आयकर कपात</th>
+                    <th scope="col">मुख्यमंञी मदत निधी</th>
+                    <th scope="col">पी.ल.आय</th>
+                    <th scope="col">राष्ट्रीय बचत पत्र</th>
+                    <th scope="col">गृहकर्ज बाहेरील भर.रक्कम</th>
+                    <th scope="col">इतर कपाती</th>
                   </tr>
             </thead>
             <tbody>
@@ -159,6 +176,12 @@
                     <td><?= groupAccidentalPolicy ?></td>
                     <td><?= ngrLic ?></td>
                     <td><?= incomeTax ?></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    
                   </tr>
                   <tr>
                     <th scope="row">‍एप्रिल 2023</th>
@@ -177,6 +200,11 @@
                     <td><?= groupAccidentalPolicy15 ?></td>
                     <td><?= ngrLic16 ?></td>
                     <td><?= incomeTax17 ?></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                   </tr>
                   <tr>
                     <th scope="row">मे 2023</th>
@@ -195,6 +223,11 @@
                     <td><?= groupAccidentalPolicy30 ?></td>
                     <td><?= ngrLic31 ?></td>
                     <td><?= incomeTax32 ?></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
 
 
@@ -215,6 +248,11 @@
                     <td><?= groupAccidentalPolicy45 ?></td>
                     <td><?= ngrLic46 ?></td>
                     <td><?= incomeTax47 ?></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
 
 
@@ -235,6 +273,11 @@
                     <td><?= groupAccidentalPolicy60 ?></td>
                     <td><?= ngrLic61 ?></td>
                     <td><?= incomeTax62 ?></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
 
 
@@ -255,6 +298,11 @@
                     <td><?= groupAccidentalPolicy75 ?></td>
                     <td><?= ngrLic76 ?></td>
                     <td><?= incomeTax77 ?></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
 
 
@@ -275,6 +323,11 @@
                     <td><?= groupAccidentalPolicy90 ?></td>
                     <td><?= ngrLic91 ?></td>
                     <td><?= incomeTax92 ?></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
 
 
@@ -295,6 +348,11 @@
                     <td><?= groupAccidentalPolicy105 ?></td>
                     <td><?= ngrLic106 ?></td>
                     <td><?= incomeTax107 ?></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
 
 
@@ -315,6 +373,11 @@
                     <td><?= groupAccidentalPolicy120 ?></td>
                     <td><?= ngrLic121 ?></td>
                     <td><?= incomeTax122 ?></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
 
 
@@ -335,11 +398,16 @@
                     <td><?= groupAccidentalPolicy135 ?></td>
                     <td><?= ngrLic136 ?></td>
                     <td><?= incomeTax137 ?></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
 
 
                 <tr>
-                    <th scope="row">जाने 2024</th>
+                    <th scope="row">जाने-2024</th>
                     <td><?= basicPay138 ?></td>
                     <td><?= da139 ?></td>
                     <td><?= hra140 ?></td>
@@ -355,11 +423,16 @@
                     <td><?= groupAccidentalPolicy150 ?></td>
                     <td><?= ngrLic151 ?></td>
                     <td><?= incomeTax152 ?></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
 
 
                 <tr>
-                    <th scope="row">फेब्रू 2024</th>
+                    <th scope="row">फेब्रू-2024</th>
                     <td><?= basicPay153 ?></td>
                     <td><?= da154 ?></td>
                     <td><?= hra155 ?></td>
@@ -375,6 +448,11 @@
                     <td><?= groupAccidentalPolicy165 ?></td>
                     <td><?= ngrLic166 ?></td>
                     <td><?= incomeTax167 ?></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
                 <tr>
                     <th scope="col"> इतर उत्पन्न</th>
@@ -393,6 +471,11 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
                 <tr>
                     <th scope="col"> इतर थकीत देयक</th>
@@ -411,6 +494,11 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
                 <tr>
                     <th scope="col">मेडीकल बिल </th>
@@ -429,6 +517,11 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
 
 
@@ -449,8 +542,12 @@
                     <td><?= groupAccidentalPolicy180 ?></td>
                     <td><?= ngrLic181 ?></td>
                     <td><?= incomeTax182 ?></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
-                <br>
                 <tr>
                     <th colspan="2" >UDISE NO:-</th>
                     <td colspan="3"><?= udisecode ?></td>
@@ -472,14 +569,17 @@
 
             </tbody>
             <? } else { ?>
-                <td colspan=2 align=center class="action-buttons">
+                <td colspan=2 align=center class="notfound">
                     <p class="error-message">User not found</p>
                 </td>
             </tr>
             <? } ?>
+        </table>
+        <p> visit & follows -><a href="https://jaganaru.blogspot.com" target="_blank" >https://jaganaru.blogspot.com</a></p>
+        <!-- <a onclick= "window.open('https://jaganaru.blogspot.com', '_blank','scrollbars=1')">Javascript Example</a> -->
+    </div>
 
-            </table>
-
+    <div>
             <tr>
                 <td colspan=4 align=center class="action-buttons">
                     <form method="get" action="<?= getUrl() ?>">
@@ -490,9 +590,10 @@
                     <? } ?>
                 </td>
             </tr>
+    </div>
 
         
-    </center>
+    <!-- </center> -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
