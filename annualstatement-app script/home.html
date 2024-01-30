@@ -1,49 +1,136 @@
-<!-- Home.html -->
-
 <!DOCTYPE html>
-<center>
-  <html>
+<html lang="en">
 
-  <head>
-    <base target="_top">
-    <style>
-      select,
-      input {
-        padding: 5px;
-        width: 100%;
-        border: 1px solid;
-        margin: 1px;
-        font-family: times
+<head>
+  <base target="_top">
+  <style>
+    body {
+      font-family: 'Sans-Serif', sans-serif;
+      background-color: #f4f4f4;
+      display: block;
+      font-size: x-large;
+    }
+
+    center {
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+
+    h3 {
+      color: #333;
+    }
+
+    table {
+      width: 70%;
+      max-width: 400px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    input {
+      padding: 10px;
+      width: calc(100% - 20px);
+      border: 1px solid #ccc;
+      margin: 10px 0;
+      font-size: 16px;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input:hover {
+      background: #FDF5E6;
+    }
+
+    input[type="submit"] {
+      background-color: #008CBA;
+      color: white;
+      cursor: pointer;
+    }
+
+    #loading-message {
+      display: none;
+      color: #e3221b;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    /* Responsive design */
+    @media only screen and (max-width: 600px) {
+      table {
+        width: 90%;
       }
+    }
+  </style>
+</head>
 
-      input:hover {
-        background: #FDF5E6;
-      }
-    </style>
-  </head>
-
-  <body>
-    <h1>Annual Statement</h1>
-    <table border="0" cellspacing="0">
+<body>
+  <center>
+    <div id="loader"></div>
+    <h3>आयकर विवरण पत्र २०२३-२४</h3>
+    <p>वाशिम जि.प.शिक्षक सह.पतसंस्था ,जिल्हा वाशिम</p>
+    <a href="https://jaganaru.blogspot.com/">https://jaganaru.blogspot.com</a>
+</br></br>
+    <table>
       <tr>
-        <td width=30% align=center>
+        <td align="center">
           <? var url = getUrl(); ?>
-          <form method="post" action="<?= url ?>">
-            <input type="text" name="shalid" placeholder="शालार्थ ID" style="width: 40%; font-size: 16px; border: 1px solid black; display: inline-block margin: 6px 2px;">
-            </br></br>
+          <form id="myForm" method="post" action="<?= url ?>">
+            <input type="text" name="shalid" placeholder="शालार्थ ID">
+            <input type="text" inputmode="numeric" name="aadharno" placeholder="आधार नंबर.">
             
-            <input type="text" inputmode="numeric" name="aadharno" placeholder="आधार नंबर." style="width: 40%; font-size: 16px; border: 1px solid black; display: inline-block margin: 6px 2px;">
-            </br></br>
-
-            <input type="submit" value="Get Payslip" name="Submit" style="background-color: #008CBA; color: white; width: 200px; font-size: 20px; border: 1px dashed #2F4F4F; height: 40px;">
+            <input type="submit" value="Get Statement" name="Submit">
+            <div id="loading-message">Please wait ....</div>
           </form>
         </td>
       </tr>
     </table>
-  </body>
+  </center>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var loadingMessage = document.getElementById('loading-message');
+
+      document.querySelector('form').addEventListener('submit', function (event) {
+        var shalidInput = document.querySelector('input[name="shalid"]');
+        var aadharnoInput = document.querySelector('input[name="aadharno"]');
+
+        shalidInput.value = shalidInput.value.trim().replace(/\s+/g, '');
+        aadharnoInput.value = aadharnoInput.value.trim().replace(/\s+/g, '');
+
+        if (shalidInput.value === '' || aadharnoInput.value === '') {
+          alert('Please fill in all required fields');
+          event.preventDefault();
+        } else {
+          loadingMessage.style.display = 'block';
+
+          var leadingNumbers = shalidInput.value.match(/^\d+/);
+          var remainingInput = shalidInput.value.replace(/^\d+/, '');
+          var lettersUppercase = remainingInput.replace(/[a-zA-Z]/g, function (match) {
+            return match.toUpperCase();
+          });
+          shalidInput.value = (leadingNumbers ? leadingNumbers[0] : '') + lettersUppercase;
+        }
+      });
+    });
   </script>
-</center>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var warningElements = document.getElementsByClassName("warning-bar");
+      for (var i = 0; i < warningElements.length; i++) {
+        warningElements[i].style.display = "none";
+      }
+    });
+  </script>
+</body>
 
 </html>

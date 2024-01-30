@@ -11,7 +11,7 @@ function doGet(e) {
 function doPost(e) {
     Logger.log(JSON.stringify(e));
 
-    if (e.parameter.Submit == 'Get Payslip') {
+    if (e.parameter.Submit == 'Get Statement') {
         var aadharnum = e.parameter.aadharno;
         var shalid = e.parameter.shalid;
         var sheet = SpreadsheetApp.openById('11AumIRMy7LRCXwDm3LmA9Pev-YKCdiHE0LlFMoq5YOk').getSheetByName("AllData");
